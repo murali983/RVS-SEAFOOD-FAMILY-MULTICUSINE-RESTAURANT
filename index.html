@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RVS Seafood Family Multi Cuisine Restaurant in Vadanemmeli - seafood, tandoori, biryani, South Indian meals and outdoor catering.">
+  <meta name="theme-color" content="#07182e">
+  <title>RVS Seafood | Family Multi Cuisine Restaurant</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307182e'/%3E%3Cpath d='M11 32c11-15 25-15 38 0-13 15-27 15-38 0Zm28 0a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z' fill='%23d8b24c'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --navy: #07182e;
+      --navy-2: #0d2544;
+      --ink: #13233b;
+      --cream: #fbf7ed;
+      --warm: #f3ead5;
+      --gold: #d8b24c;
+      --gold-deep: #a87819;
+      --sea: #127a78;
+      --line: rgba(216, 178, 76, .36);
+      --white: #fffdf7;
+      --shadow: 0 18px 45px rgba(4, 18, 38, .14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: -4rem;
+      left: 1rem;
+      padding: .7rem 1rem;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 0 0 .5rem .5rem;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 0; }
+    .wrap { width: min(1120px, calc(100% - 2.25rem)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(216, 178, 76, .23);
+      background: rgba(7, 24, 46, .96);
+      backdrop-filter: blur(12px);
+      color: var(--white);
+    }
+    .header-bar {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand { color: var(--white); text-decoration: none; display: inline-flex; align-items: center; gap: .62rem; line-height: 1.05; }
+    .brand-logo { display: block; width: 54px; height: 34px; object-fit: cover; object-position: center; border-radius: .22rem; }
+    .brand-copy { display: inline-grid; }
+    .brand strong { letter-spacing: .14em; font-size: 1.06rem; }
+    .brand small { margin-top: .2rem; color: #f2d981; font: 600 .65rem/1.2 Arial, sans-serif; letter-spacing: .14em; }
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: .4rem;
+      background: transparent;
+      color: var(--white);
+      font: 700 .78rem/1 Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+    .site-nav { display: flex; align-items: center; gap: 1.2rem; }
+    .site-nav a {
+      padding: .6rem 0;
+      color: #f6edda;
+      text-decoration: none;
+      font: 700 .72rem/1 Arial, sans-serif;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .site-nav a:hover, .site-nav a:focus-visible { color: var(--gold); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 635px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(27, 107, 127, .52), transparent 28rem),
+        radial-gradient(circle at 10% 110%, rgba(216, 178, 76, .18), transparent 29rem),
+        linear-gradient(135deg, #06152a 0%, #0a2543 53%, #07182e 100%);
+    }
+    .hero-photo {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: .44;
+      filter: saturate(.92) contrast(1.06);
+      pointer-events: none;
+    }
+    .hero::before, .hero::after {
+      position: absolute;
+      content: "";
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero::before {
+      inset: 22px;
+      border: 1px solid rgba(216, 178, 76, .55);
+    }
+    .hero::after {
+      width: 520px;
+      height: 520px;
+      right: -220px;
+      bottom: -235px;
+      border: 1px solid rgba(216, 178, 76, .25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 52px rgba(216, 178, 76, .035), 0 0 0 104px rgba(216, 178, 76, .025);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(860px, 100%);
+      padding: 6.6rem 0 5rem;
+      text-align: center;
+    }
+    .eyebrow {
+      margin: 0 0 .8rem;
+      color: #efd16e;
+      font: 700 .78rem/1.3 Arial, sans-serif;
+      letter-spacing: .27em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 780px;
+      margin: 0 auto .6rem;
+      font-size: clamp(2.85rem, 9vw, 6.7rem);
+      letter-spacing: .075em;
+      line-height: .94;
+      text-transform: uppercase;
+    }
+    .hero-subtitle {
+      margin: 0 auto 1.35rem;
+      color: #f5d977;
+      font-size: clamp(1rem, 2.6vw, 1.45rem);
+      font-style: italic;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero-copy {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #f5eee0;
+      font-size: clamp(1.02rem, 2vw, 1.22rem);
+    }
+    .hero-copy span { display: block; margin-top: .25rem; color: #dce8ea; font-size: .94em; }
+    .hero-rule { width: 170px; height: 2px; margin: 1.65rem auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .hero-actions, .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: .8rem 1.15rem;
+      border: 1px solid transparent;
+      border-radius: .32rem;
+      font: 800 .77rem/1 Arial, sans-serif;
+      letter-spacing: .09em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform .18s ease, background .18s ease, color .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--gold); color: #14243a; }
+    .button-secondary { border-color: rgba(255,255,255,.72); color: var(--white); }
+    .button-secondary:hover { background: var(--white); color: var(--navy); }
+    .trust-line { margin-top: 2.2rem; color: #e8d8a4; font: 700 .76rem/1.5 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+
+    section { padding: 5rem 0; scroll-margin-top: 70px; }
+    .section-label {
+      margin-bottom: .55rem;
+      color: var(--gold-deep);
+      font: 800 .75rem/1.2 Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin-bottom: .9rem;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1;
+    }
+    .section-title .ta { display: block; margin-top: .5rem; color: #506173; font: 500 clamp(1rem, 2.6vw, 1.35rem)/1.35 Arial, sans-serif; }
+    .section-intro { max-width: 720px; margin-bottom: 2rem; color: #4e5e70; font-size: 1.08rem; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .feature-card {
+      min-height: 188px;
+      padding: 1.5rem;
+      border: 1px solid #e7dcc3;
+      background: #fffdf8;
+      box-shadow: 0 6px 20px rgba(21, 42, 68, .06);
+    }
+    .feature-icon { display: grid; place-items: center; width: 39px; height: 39px; margin-bottom: 1rem; border-radius: 50%; background: var(--navy); color: var(--gold); font-size: 1.1rem; }
+    .feature-card h3 { margin-bottom: .5rem; color: var(--navy); font-size: 1.27rem; }
+    .feature-card p { margin-bottom: 0; color: #607083; }
+    .photo-showcase { padding-top: 0; background: var(--cream); }
+    .gallery-heading { max-width: 720px; margin-bottom: 1.55rem; }
+    .gallery-heading h2 { margin-bottom: .35rem; color: var(--navy); font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.08; }
+    .gallery-heading p { margin-bottom: 0; color: #607083; }
+    .food-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .food-gallery figure { margin: 0; overflow: hidden; background: var(--navy); box-shadow: var(--shadow); }
+    .food-gallery img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+    .food-gallery figure:nth-child(3) img { object-position: 83% center; }
+    .food-gallery figcaption { padding: .95rem 1rem 1.05rem; color: #f9ecd0; font: 700 .76rem/1.45 Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+
+    .menu-section { background: var(--navy); color: var(--white); }
+    .menu-section .section-label { color: #efd16e; }
+    .menu-section .section-title { color: var(--white); }
+    .menu-section .section-title .ta { color: #e4d6b5; }
+    .menu-section .section-intro { color: #d2dceb; }
+    .menu-tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: .55rem; margin-bottom: 1.4rem; }
+    .menu-jump {
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      padding: .65rem;
+      border: 1px solid rgba(216, 178, 76, .42);
+      background: rgba(255,255,255,.025);
+      color: #f8eccd;
+      text-align: center;
+      text-decoration: none;
+      font: 700 .68rem/1.25 Arial, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .menu-jump:hover, .menu-jump:focus-visible { background: var(--gold); color: var(--navy); }
+    .menu-note { margin: 0 0 1.5rem; color: #aebfd4; font: .83rem/1.55 Arial, sans-serif; }
+    .menu-groups { display: grid; gap: 1rem; }
+    .menu-group {
+      border: 1px solid rgba(216, 178, 76, .38);
+      background: rgba(4, 14, 29, .34);
+      scroll-margin-top: 86px;
+    }
+    .menu-group summary {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 70px;
+      padding: 1.1rem 3.4rem 1.1rem 1.25rem;
+      cursor: pointer;
+      list-style: none;
+      color: #ffe49a;
+      font: 800 clamp(1rem, 2.8vw, 1.35rem)/1.15 Georgia, serif;
+      letter-spacing: .04em;
+    }
+    .menu-group summary::-webkit-details-marker { display: none; }
+    .menu-group summary::after {
+      position: absolute;
+      right: 1.3rem;
+      content: "+";
+      font: 300 1.9rem/1 Arial, sans-serif;
+    }
+    .menu-group[open] summary::after { content: "−"; }
+    .menu-group summary span { color: #afc8c9; font: 700 .66rem/1.3 Arial, sans-serif; letter-spacing: .12em; text-align: right; text-transform: uppercase; }
+    .menu-content { padding: 0 1.25rem 1.4rem; }
+    .menu-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1rem; }
+    .menu-card { padding: 1rem; border-top: 1px solid rgba(216, 178, 76, .22); background: rgba(255,255,255,.025); }
+    .menu-card h3 { margin-bottom: .5rem; color: #f6da84; font-size: 1.04rem; letter-spacing: .02em; }
+    .menu-list { margin: 0; padding: 0; list-style: none; }
+    .menu-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .7rem; padding: .35rem 0; border-bottom: 1px dashed rgba(255,255,255,.11); color: #f8f5ec; font-size: .94rem; }
+    .menu-list li:last-child { border-bottom: 0; }
+    .menu-list b { color: #f2cc61; font: 800 .87rem/1.3 Arial, sans-serif; white-space: nowrap; }
+    .menu-description { margin: -.05rem 0 .6rem; color: #adbed2; font-size: .83rem; font-style: italic; }
+    .menu-cta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; padding: 1.35rem; border: 1px solid var(--gold); background: linear-gradient(105deg, rgba(216,178,76,.16), rgba(255,255,255,.02)); }
+    .menu-cta p { margin: 0; color: #f5eee0; }
+    .menu-cta strong { display: block; color: #f5d879; font-size: 1.2rem; }
+
+    .visit-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.2rem; align-items: stretch; }
+    .visit-card { padding: clamp(1.35rem, 4vw, 2.5rem); border: 1px solid #e5d8b7; background: #fffdf8; box-shadow: var(--shadow); }
+    .visit-card.navy { color: var(--white); background: linear-gradient(145deg, var(--navy), #123456); border-color: var(--navy); }
+    .visit-card h3 { margin-bottom: .55rem; font-size: 1.5rem; }
+    .visit-card p { margin-bottom: .85rem; }
+    .address { color: #506173; font-size: 1.08rem; }
+    .navy .address, .navy p { color: #e6ecf4; }
+    .mini-label { margin: 1.35rem 0 .35rem; color: var(--gold-deep); font: 800 .72rem/1.2 Arial, sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+    .navy .mini-label { color: #f1d779; }
+    .hours { color: var(--navy); font-size: 1.35rem; font-weight: 700; }
+    .navy .hours { color: #fff1bd; }
+    .visit-link { color: var(--gold-deep); font-weight: 700; }
+    .navy .visit-link { color: #f7d96f; }
+    .google-qr { width: min(100%, 182px); margin: 1.25rem 0 0; padding: .45rem; background: #fff; border-radius: .28rem; }
+    .google-qr img { display: block; width: 100%; height: auto; }
+    .google-qr figcaption { margin-top: .38rem; color: #34465d; font: 700 .65rem/1.3 Arial, sans-serif; letter-spacing: .06em; text-align: center; text-transform: uppercase; }
+
+    .catering {
+      position: relative;
+      overflow: hidden;
+      padding: 4.5rem 0;
+      color: var(--white);
+      text-align: center;
+      background: linear-gradient(115deg, rgba(7,24,46,.98), rgba(13,45,74,.94)), var(--navy);
+    }
+    .catering::before { position: absolute; inset: 14px; content: ""; border: 1px solid rgba(216,178,76,.4); pointer-events: none; }
+    .catering .wrap { position: relative; z-index: 1; }
+    .catering h2 { max-width: 800px; margin: 0 auto 1rem; color: #ffe49a; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1; }
+    .catering p { max-width: 720px; margin: 0 auto 1.5rem; color: #e4ebf3; font-size: 1.08rem; }
+
+    footer { padding: 2.25rem 0; color: #dae3ed; background: #051224; }
+    .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .footer-title { color: #f1d779; font: 800 .82rem/1.3 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-copy { margin: .3rem 0 0; color: #aabbd0; font-size: .86rem; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1rem; }
+    .footer-links a { color: #f5e7bd; font: 700 .75rem/1.2 Arial, sans-serif; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; }
+
+    :focus-visible { outline: 3px solid #e1ba51; outline-offset: 3px; }
+    @media (max-width: 800px) {
+      .menu-toggle { display: block; }
+      .site-nav { display: none; position: absolute; top: 70px; right: 0; left: 0; padding: .7rem 1.15rem 1rem; border-top: 1px solid var(--line); background: var(--navy); }
+      .site-nav.open { display: grid; }
+      .site-nav a { padding: .85rem 0; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .food-gallery { grid-template-columns: 1fr; }
+      .food-gallery img { aspect-ratio: 16 / 10; }
+      .menu-tabs { grid-template-columns: repeat(2, 1fr); }
+      .visit-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) {
+      .wrap { width: min(100% - 1.35rem, 1120px); }
+      .header-bar { min-height: 62px; }
+      .brand strong { font-size: .93rem; }
+      .brand small { font-size: .53rem; }
+      .brand-logo { width: 46px; height: 30px; }
+      .site-nav { top: 62px; }
+      .hero { min-height: 590px; }
+      .hero::before { inset: 10px; }
+      .hero-content { padding: 5.7rem 0 4rem; }
+      .menu-columns { grid-template-columns: 1fr; }
+      .menu-group summary { min-height: 74px; padding-left: 1rem; }
+      .menu-content { padding: 0 .8rem 1rem; }
+      .menu-card { padding: .8rem; }
+      .menu-list li { font-size: .86rem; }
+      .menu-cta { display: grid; padding: 1.1rem; }
+      .footer-grid { display: grid; }
+      .footer-links { justify-content: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="brand" href="#home" aria-label="RVS Seafood home">
+        <img class="brand-logo" src="assets/rvs-crest.webp" width="54" height="34" alt="">
+        <span class="brand-copy">
+          <strong>RVS SEAFOOD</strong>
+          <small>Family Multi Cuisine Restaurant</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">Our Table</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+        <a href="#catering">Catering</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-photo" src="assets/hero-seafood.webp" width="1672" height="941" alt="" aria-hidden="true" fetchpriority="high">
+      <div class="wrap hero-content">
+        <p class="eyebrow">Vadanemmeli • ECR</p>
+        <h1 id="hero-title">RVS Seafood</h1>
+        <p class="hero-subtitle">Family Multi Cuisine Restaurant</p>
+        <p class="hero-copy">
+          Seafood, tandoori, biryani and South Indian favourites—made for memorable family meals.
+          <span lang="ta">கடல் உணவு, பிரியாணி, தந்தூரி மற்றும் தென்னிந்திய சுவைகள் ஒரே இடத்தில்.</span>
+        </p>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://wa.me/919363031115?text=Hello%20RVS%20Seafood%2C%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+          <a class="button button-secondary" href="#menu">Explore Our Menu</a>
+        </div>
+        <p class="trust-line">Fresh fish &amp; prawn • Tandoori • Biryani • Pantry lounge</p>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="section-label">A table for every appetite</p>
+        <h2 class="section-title" id="about-title">From the coast to your table <span class="ta" lang="ta">கடல் சுவைகளும் குடும்ப மகிழ்ச்சியும்</span></h2>
+        <p class="section-intro">RVS brings together coastal seafood, Indian clay-oven dishes, biryani, Chinese starters and comforting South Indian meals. Come for a quick tiffin, a relaxed family lunch, or a special celebration.</p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">✦</div>
+            <h3>Seafood &amp; Fresh Fry</h3>
+            <p>Fish, prawn and coastal specials featured across the kitchen menu.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">◌</div>
+            <h3>One Family Table</h3>
+            <p>Vegetarian, non-vegetarian, tiffin and pantry choices for every guest.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">★</div>
+            <h3>Outdoor Catering</h3>
+            <p>For weddings, birthdays, corporate events and family celebrations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-showcase" aria-labelledby="food-gallery-title">
+      <div class="wrap">
+        <div class="gallery-heading">
+          <p class="section-label">A feast for the eyes</p>
+          <h2 id="food-gallery-title">The colour of good food.</h2>
+          <p>From fragrant biryani to fire-grilled seafood, every table has something to gather around.</p>
+        </div>
+        <div class="food-gallery">
+          <figure>
+            <img src="assets/biryani.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Illustrative chicken biryani in a brass serving bowl">
+            <figcaption>Dum biryani</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/tandoori-seafood.webp" width="900" height="1125" loading="lazy" decoding="async" alt="Illustrative platter of grilled tandoori chicken and fish">
+            <figcaption>Clay-oven grill</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/hero-seafood.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Illustrative grilled fish, prawns and seafood platter">
+            <figcaption>Coastal seafood</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu" aria-labelledby="menu-title">
+      <div class="wrap">
+        <p class="section-label">Menu highlights &amp; prices</p>
+        <h2 class="section-title" id="menu-title">Find your favourite <span class="ta" lang="ta">உங்கள் விருப்பமான சுவையைத் தேர்ந்தெடுக்கவும்</span></h2>
+        <p class="section-intro">Explore the current restaurant menu. Prices are in Indian rupees and may change with availability.</p>
+        <nav class="menu-tabs" aria-label="Menu categories">
+          <a class="menu-jump" href="#chinese">Chinese &amp; Starters</a>
+          <a class="menu-jump" href="#indian">Biryani &amp; Tandoori</a>
+          <a class="menu-jump" href="#south">South Indian</a>
+          <a class="menu-jump" href="#pantry">Pantry Lounge</a>
+          <a class="menu-jump" href="#visit">Contact &amp; Visit</a>
+        </nav>
+        <p class="menu-note">Please let the team know about allergies or dietary preferences before ordering.</p>
+        <div class="menu-groups">
+          <details class="menu-group" id="chinese" open>
+            <summary>Chinese, Wok &amp; Coastal Starters <span>Soups • starters • fried rice</span></summary>
+            <div class="menu-content">
+              <div class="menu-columns">
+                <article class="menu-card">
+                  <h3>Chinese Soups</h3>
+                  <ul class="menu-list">
+                    <li><span>Sweet Corn Soup (Veg / Chicken / Prawn)</span><b>100 / 120 / 150</b></li>
+                    <li><span>Manchow Soup (Veg / Chicken)</span><b>100 / 120</b></li>
+                    <li><span>Hot 'n' Sour Soup (Veg / Chicken)</span><b>100 / 120</b></li>
+                    <li><span>Clear Soup (Veg / Chicken)</span><b>100 / 200</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Veg Starters</h3>
+                  <ul class="menu-list">
+                    <li><span>Paneer 65 / Mushroom 65 / Baby Corn 65</span><b>₹ 200</b></li>
+                    <li><span>Gobi 65</span><b>₹ 160</b></li>
+                    <li><span>Baby Corn Manchurian / Mushroom / Paneer</span><b>₹ 200</b></li>
+                    <li><span>Gobi Manchurian</span><b>₹ 185</b></li>
+                    <li><span>Baby Corn Chilly / Paneer Chilly / Mushroom Chilly</span><b>₹ 200</b></li>
+                    <li><span>Chilly Gobi</span><b>₹ 180</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Non-Veg Starters</h3>
+                  <ul class="menu-list">
+                    <li><span>Chilly Chicken / Manchurian Chicken</span><b>₹ 220</b></li>
+                    <li><span>Prawn Chilly / Prawn Manchurian</span><b>₹ 280</b></li>
+                    <li><span>Prawn 65</span><b>₹ 300</b></li>
+                    <li><span>Chicken 65</span><b>₹ 220</b></li>
+                    <li><span>Dragon / Honey / Garlic / Ginger Chicken</span><b>₹ 250</b></li>
+                    <li><span>Chicken 555</span><b>₹ 270</b></li>
+                    <li><span>Majestic Chicken / Hong Kong Chicken</span><b>₹ 270</b></li>
+                    <li><span>Chicken Lollipop / Drumstick</span><b>₹ 250</b></li>
+                    <li><span>Chilly Wings / Wings 65</span><b>₹ 260</b></li>
+                    <li><span>Egg Chilly / Egg Manchurian / Egg 65</span><b>₹ 180</b></li>
+                    <li><span>Egg Burji / Omelet / Boiled</span><b>₹ 60</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Wok Rice &amp; Noodles</h3>
+                  <ul class="menu-list">
+                    <li><span>Chicken Fried Rice / Chicken Noodles</span><b>₹ 180</b></li>
+                    <li><span>Schezwan Chicken Fried Rice / Noodles</span><b>₹ 200</b></li>
+                    <li><span>Prawn Fried Rice / Prawn Noodles</span><b>₹ 220</b></li>
+                    <li><span>Egg Fried Rice / Egg Noodles</span><b>₹ 160</b></li>
+                  </ul>
+                  <h3 style="margin-top:1.1rem">Indian Starters &amp; Fish Fry</h3>
+                  <ul class="menu-list">
+                    <li><span>Chicken Fry / Chicken Chukka</span><b>200 / 220</b></li>
+                    <li><span>Mutton Fry / Mutton Chukka</span><b>300 / 320</b></li>
+                    <li><span>Prawn Fry</span><b>₹ 330</b></li>
+                    <li><span>Fish Fry Vanjaram (Seer Fish)</span><b>₹ 240</b></li>
+                    <li><span>Fish Fry (Small / Medium / Big)</span><b>150 / 230 / 350</b></li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </details>
+
+          <details class="menu-group" id="indian">
+            <summary>Indian Menu &amp; Tandoori Clay Oven <span>Biryani • breads • gravies</span></summary>
+            <div class="menu-content">
+              <div class="menu-columns">
+                <article class="menu-card">
+                  <h3>Dum Biryani</h3>
+                  <ul class="menu-list">
+                    <li><span>Chicken Biryani</span><b>₹ 185</b></li>
+                    <li><span>Chicken 65 Biryani</span><b>₹ 220</b></li>
+                    <li><span>Prawn Biryani</span><b>₹ 325</b></li>
+                    <li><span>Fish Biryani</span><b>₹ 300</b></li>
+                    <li><span>Mutton Biryani</span><b>₹ 330</b></li>
+                    <li><span>Tandoor Chicken Biryani</span><b>₹ 250</b></li>
+                    <li><span>Tangri Kebab Biryani</span><b>₹ 300</b></li>
+                    <li><span>Chicken Tikka / Mogalai Chicken Biryani</span><b>270 / 300</b></li>
+                    <li><span>Egg Biryani / Kuska</span><b>160 / 140</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Tandoori Starters</h3>
+                  <ul class="menu-list">
+                    <li><span>Tandoori Chicken (Half / Full)</span><b>300 / 550</b></li>
+                    <li><span>Grilled Chicken (Half / Full)</span><b>300 / 550</b></li>
+                    <li><span>Chicken Tikka</span><b>₹ 320</b></li>
+                    <li><span>Malai Chicken Tikka</span><b>₹ 350</b></li>
+                    <li><span>Banjara / Hariyali Chicken Kebab</span><b>₹ 330</b></li>
+                    <li><span>Lasuni Chicken Tikka</span><b>₹ 340</b></li>
+                    <li><span>Tangri Kebab (2 Pcs / 4 Pcs)</span><b>250 / 400</b></li>
+                    <li><span>Tandoori Fish (Small / Med / Big)</span><b>150 / 250 / 400</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Veg Gravies &amp; Breads</h3>
+                  <ul class="menu-list">
+                    <li><span>Kadai Veg / Mixed Veg Curry</span><b>180 / 200</b></li>
+                    <li><span>Kadai Paneer</span><b>₹ 220</b></li>
+                    <li><span>Mushroom Masala</span><b>₹ 190</b></li>
+                    <li><span>Dal Fry / Dal Tadka</span><b>₹ 160</b></li>
+                    <li><span>Green Peas / Channa Masala</span><b>180 / 200</b></li>
+                    <li><span>Paneer Butter Masala / Paneer Tikka Masala</span><b>₹ 230</b></li>
+                    <li><span>Roti / Butter Roti</span><b>25 / 30</b></li>
+                    <li><span>Naan / Butter Naan</span><b>30 / 40</b></li>
+                    <li><span>Kulcha Plain / Butter</span><b>30 / 40</b></li>
+                    <li><span>Garlic Naan Plain / Butter</span><b>40 / 50</b></li>
+                    <li><span>Chapathi / Pulka</span><b>₹ 25</b></li>
+                    <li><span>Paneer Dopiyaza</span><b>₹ 220</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Non-Veg Gravies</h3>
+                  <ul class="menu-list">
+                    <li><span>Chicken Curry / Chicken Masala</span><b>180 / 200</b></li>
+                    <li><span>Kadai Chicken</span><b>₹ 220</b></li>
+                    <li><span>Butter Chicken</span><b>₹ 240</b></li>
+                    <li><span>Hyderabadi / Chettinad Chicken</span><b>₹ 250</b></li>
+                    <li><span>Guntur / Mogalai Chicken Curry</span><b>₹ 250</b></li>
+                    <li><span>Afghani Chicken Curry</span><b>₹ 260</b></li>
+                    <li><span>Chicken Dopiza / Pepper Masala / Patiyala</span><b>₹ 230</b></li>
+                    <li><span>Chicken Kolhapuri / Chicken Tikka Masala</span><b>230 / 250</b></li>
+                    <li><span>Mutton Curry / Mutton Masala</span><b>330 / 350</b></li>
+                    <li><span>Kadai Mutton / Lara Mutton</span><b>₹ 330</b></li>
+                    <li><span>Mutton Rogan Josh</span><b>₹ 350</b></li>
+                    <li><span>Prawn Curry / Prawn Masala</span><b>330 / 350</b></li>
+                    <li><span>Kadai Prawn / Prawn Dopiyaza</span><b>340 / 350</b></li>
+                    <li><span>Egg Curry / Egg Masala</span><b>170 / 180</b></li>
+                    <li><span>Fish Curry / Fish Masala</span><b>280 / 300</b></li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </details>
+
+          <details class="menu-group" id="south">
+            <summary>South Indian Meals &amp; Tiffin <span>Meals • dosa • parotta</span></summary>
+            <div class="menu-content">
+              <div class="menu-columns">
+                <article class="menu-card">
+                  <h3>Traditional Meals</h3>
+                  <p class="menu-description">Fresh, hot and served with traditional accompaniments.</p>
+                  <ul class="menu-list">
+                    <li><span>Veg Meals</span><b>₹ 150</b></li>
+                    <li><span>Non-Veg Meals</span><b>₹ 180</b></li>
+                    <li><span>Fish Meals</span><b>₹ 350</b></li>
+                    <li><span>Prawn Meals</span><b>₹ 350</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Tiffin &amp; Dosa Corner</h3>
+                  <ul class="menu-list">
+                    <li><span>Idly (1 Pc)</span><b>₹ 20</b></li>
+                    <li><span>Pongal (1 Qty)</span><b>₹ 60</b></li>
+                    <li><span>Poori (2 Pc with Masala)</span><b>₹ 60</b></li>
+                    <li><span>Podi Dosa / Plain Dosa</span><b>90 / 80</b></li>
+                    <li><span>Kal Dosa</span><b>₹ 40</b></li>
+                    <li><span>Egg Dosa / Onion Dosa</span><b>120 / 110</b></li>
+                    <li><span>Chicken Curry Dosa</span><b>₹ 180</b></li>
+                    <li><span>Parotta Plain (1 No)</span><b>₹ 25</b></li>
+                    <li><span>Chicken Kothu Parotta</span><b>₹ 180</b></li>
+                    <li><span>Chapathi (1 No)</span><b>₹ 25</b></li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </details>
+
+          <details class="menu-group" id="pantry">
+            <summary>RVS Pantry Lounge <span>Juices • faluda • coffee</span></summary>
+            <div class="menu-content">
+              <div class="menu-columns">
+                <article class="menu-card">
+                  <h3>Fresh Fruit Juices</h3>
+                  <ul class="menu-list">
+                    <li><span>Apple / Fresh Strawberry / Kiwi Juice</span><b>₹ 90</b></li>
+                    <li><span>Pineapple / Mousambi / Orange / Papaya Juice</span><b>₹ 70</b></li>
+                    <li><span>Pomegranate / Grape Juice</span><b>₹ 80</b></li>
+                    <li><span>Mango / Carrot / Chikku / Guava Juice</span><b>₹ 70</b></li>
+                    <li><span>Watermelon Juice / Lime Mint Cooler</span><b>₹ 60</b></li>
+                    <li><span>Fresh Lime Juice</span><b>₹ 50</b></li>
+                    <li><span>Beetroot / Cucumber / Banana Juice</span><b>₹ 70</b></li>
+                    <li><span>Dragon Fruit Juice</span><b>₹ 100</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Milkshakes &amp; Faluda</h3>
+                  <ul class="menu-list">
+                    <li><span>Apple / Mango / Chikku Milkshake</span><b>₹ 110</b></li>
+                    <li><span>Banana Milkshake</span><b>₹ 100</b></li>
+                    <li><span>Fresh Strawberry Milkshake</span><b>₹ 120</b></li>
+                    <li><span>Dates / Anjeera Shake</span><b>₹ 130</b></li>
+                    <li><span>Oreo Milkshake</span><b>₹ 110</b></li>
+                    <li><span>Mix Dry Fruit Milkshake</span><b>₹ 140</b></li>
+                    <li><span>Vanilla / Mango Milkshake</span><b>₹ 110</b></li>
+                    <li><span>Strawberry / Chocolate Milkshake</span><b>₹ 120</b></li>
+                    <li><span>Butterscotch / Blackcurrant / Red Velvet</span><b>₹ 130</b></li>
+                    <li><span>Pista Milkshake</span><b>₹ 130</b></li>
+                    <li><span>RVS Special Faluda</span><b>₹ 150</b></li>
+                    <li><span>Royal / Arabian Faluda</span><b>₹ 170</b></li>
+                    <li><span>Fruit Salad / With Ice Cream</span><b>140 / 160</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Soda, Mojito &amp; Refreshers</h3>
+                  <ul class="menu-list">
+                    <li><span>Lassi (Sweet &amp; Salt)</span><b>₹ 70</b></li>
+                    <li><span>Buttermilk / Masala Soda</span><b>₹ 60</b></li>
+                    <li><span>Fresh Lime Soda (Sweet &amp; Salt)</span><b>₹ 60</b></li>
+                    <li><span>Mint Lime Soda</span><b>₹ 70</b></li>
+                    <li><span>Nannari Sharbat</span><b>₹ 60</b></li>
+                    <li><span>Virgin Mojito / Passion Fruit Mojito / Blueberry Mojito</span><b>₹ 90</b></li>
+                    <li><span>Blue Curacao Mojito</span><b>₹ 100</b></li>
+                  </ul>
+                </article>
+                <article class="menu-card">
+                  <h3>Hot Beverages &amp; Ice Cream</h3>
+                  <ul class="menu-list">
+                    <li><span>Tea / Masala Tea / Coffee</span><b>20 / 25 / 30</b></li>
+                    <li><span>Green / Lemon / Tulasi / Ginger / Mint Tea</span><b>₹ 30</b></li>
+                    <li><span>Sulaimani Tea (Black Tea)</span><b>₹ 30</b></li>
+                    <li><span>Boost / Horlicks / Fresh Milk</span><b>40 / 40 / 25</b></li>
+                    <li><span>Water Bottle (Half / 1 Ltr)</span><b>10 / 20</b></li>
+                    <li><span>Cool Drinks (Small / 250ml / 500ml / 1 Ltr)</span><b>10 / 20 / 40 / 50</b></li>
+                    <li><span>Energy Drink</span><b>₹ 60</b></li>
+                    <li><span>Assorted Ice Creams</span><b>20–70</b></li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="menu-cta">
+          <p><strong>Looking for the latest availability?</strong> Message the restaurant for today’s fish, catering and large-order options.</p>
+          <a class="button button-primary" href="https://wa.me/919363031115?text=Hello%20RVS%20Seafood%2C%20I%20would%20like%20to%20check%20today%27s%20menu%20availability." target="_blank" rel="noopener">Ask on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit" aria-labelledby="visit-title">
+      <div class="wrap">
+        <p class="section-label">Find us on ECR</p>
+        <h2 class="section-title" id="visit-title">Come hungry. Leave happy. <span class="ta" lang="ta">வாருங்கள், சுவையுடன் மகிழுங்கள்</span></h2>
+        <div class="visit-grid">
+          <article class="visit-card">
+            <h3>RVS Seafood Restaurant</h3>
+            <p class="address">No. 203, ECR Main Road,<br>Vadanemmeli, opposite Crocodile Bank.</p>
+            <p lang="ta" class="address">எண் 203, ECR மெயின் ரோடு,<br>வடநெம்மேலி, முதலை வங்கி எதிரில்.</p>
+            <a class="visit-link" href="https://www.google.com/maps/search/?api=1&amp;query=No%20203%20ECR%20Main%20Road%2C%20Vadanemmeli%2C%20opposite%20Crocodile%20Bank" target="_blank" rel="noopener">Open directions in Google Maps →</a>
+          </article>
+          <article class="visit-card navy">
+            <p class="mini-label">Opening hours / திறந்திருக்கும் நேரம்</p>
+            <p class="hours">7:00 AM – 10:45 PM</p>
+            <p>Every day, subject to special occasions and service availability.</p>
+            <p class="mini-label">Call or WhatsApp</p>
+            <p class="hours"><a href="tel:+919363031115">+91 93630 31115</a></p>
+            <a class="visit-link" href="https://wa.me/919363031115" target="_blank" rel="noopener">Start a WhatsApp conversation →</a>
+            <figure class="google-qr">
+              <img src="assets/rvs-google-qr.png" width="415" height="402" loading="lazy" decoding="async" alt="RVS Seafood Google QR card">
+              <figcaption>Scan to find RVS on Google</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="catering" id="catering" aria-labelledby="catering-title">
+      <div class="wrap">
+        <p class="section-label" style="color:#efd16e">Outdoor Catering</p>
+        <h2 id="catering-title">Celebrations deserve a generous table.</h2>
+        <p>Bring RVS Seafood, biryani and South Indian favourites to your wedding, birthday, corporate event or family gathering.</p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="tel:+919363031115">Call +91 93630 31115</a>
+          <a class="button button-secondary" href="https://wa.me/919363031115?text=Hello%20RVS%20Seafood%2C%20I%20would%20like%20to%20enquire%20about%20outdoor%20catering." target="_blank" rel="noopener">Catering Enquiry</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">RVS Seafood Family Multi Cuisine Restaurant</div>
+        <p class="footer-copy">Seafood • Tandoori • Biryani • South Indian meals • Pantry lounge</p>
+        <p class="footer-copy">Food photographs are illustrative; availability may vary.</p>
+      </div>
+      <div class="footer-links">
+        <a href="tel:+919363031115">Call</a>
+        <a href="https://wa.me/919363031115" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#home">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-nav');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open', !expanded);
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
